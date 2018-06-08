@@ -11,7 +11,7 @@ var wrong = 0;
 var counter = 60;
 var intervalId;
 
-function run() {
+function runtimer() {
       clearInterval(intervalId);
       intervalId = setInterval(decrement, 1000);
     }
@@ -22,17 +22,15 @@ function run() {
 //  Decrease number by one.
       counter--;
 
-      wrong++;
-
 //  Show the number in the #show-number tag.
-      $("#show-number").html("<h2>" + number + "</h2>");
+      $("#show-number").html("<h2>" + counter + "</h2>");
 
 
 //  Once number hits zero...
-      if (number === 0) {
+      if (counter === 0) {
 
 //  ...run the stop function.
-        outoftime(); // STILL NEED TO MAKE OUT OF TIME FUNCTION
+        // outoftime(); // STILL NEED TO MAKE OUT OF TIME FUNCTION
 
 //  Alert the user that time is up.
         alert("Time Up!");
@@ -44,5 +42,7 @@ function run() {
 $( ".start" ).on( "click", function() {
             $( '.startcontainer' ).hide();
             $( '.maincontainer' ).show();
+            runtimer();
+            decrement();
 
         })
