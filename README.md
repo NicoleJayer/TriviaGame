@@ -1,7 +1,7 @@
 # TriviaGame
 
 This trivia game was designed to be a timed question and answer project that
-utilizes a blend of javascript and jquery with a theme of whatever we choose.
+utilizes a blend of javascript and jQuery with a theme of whatever we choose.
 
 I have decided to give the player a minute per question, while the game changes Disney backgrounds
 based on the question and keeps track of the correct and wrong answers in the background, revealing
@@ -36,9 +36,12 @@ A. Thumper.
 
 Q. In the movie Finding Nemo, what is the address used to find Nemo?
 
-Reveal Answer
-
 A. P. Sherman, 42 Wallaby Way, Sydney.
     -- alternative wrong answers: P. Herman, 52 Wallaby Way, Sydney.| B. Sherman, 42 Wallaby Way, Sydney. | E. Herman, 42 Wallaby Way, Sydney.
 
 #
+
+Q. What does the crocodile swallow in Peter Pan?
+
+A. A clock.
+    -- alternative wrong answers: A metronome, A pirate, A trumpet.
