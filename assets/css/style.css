@@ -1,0 +1,30 @@
+body {
+  background-image: url(../images/disneymain.jpg);
+  background-size: cover;
+}
+
+.col-md-8 {
+  background-color:rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 30px 0px 50px 0px;
+  margin-top: 80px;
+
+}
+
+.start {
+  background-color: pink;
+  opacity: 1;
+  width: 200px;
+  height: 40px;
+}
+
+p {
+  font-size: 100px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.clearFix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
