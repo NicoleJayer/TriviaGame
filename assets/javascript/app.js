@@ -23,9 +23,9 @@ var intervalId;
 
 var answerone = ["Pocahontas", "Ariel", "Cinderella", "Mulan"];
 var answertwo = ["Love is an open door", "For the first time in forever","Let It Go", "Frozen heart"];
-var answerthree = ["Thumper", "Hopper", "Jumper", "Bumper"];
+var answerthree = ["Hopper","Thumper", "Jumper", "Bumper"];
 var answerfour = ["P. Sherman, 42 Wallaby Way, Sydney", "P. Herman, 52 Wallaby Way, Sydney", " B. Sherman, 42 Wallaby Way, Sydney", "E. Herman, 42 Wallaby Way, Sydney"];
-var answerfive = ["A clock" , "A metronome" , "A pirate" , "A trumpet"];
+var answerfive = ["A metronome" , "A clock" , "A pirate" , "A trumpet"];
 
 //question variables
 
@@ -84,7 +84,7 @@ $( ".start" ).on( "click", function() {
 
 //if logic for displying the answers in association with the questions:
 
-if(currentquestion == questionone) {
+if(currentquestion == questionone) { //pocahontas
   $('#answerone').html(answerone[0]);
   $('#answertwo').html(answerone[1]);
   $('#answerthree').html(answerone[2]);
@@ -92,13 +92,39 @@ if(currentquestion == questionone) {
   $('#answerone').addClass("correctanswer");
 }
 
-else if(currentquestion == questiontwo) {
+if(currentquestion == questiontwo) { //frozen
   $('#answerone').html(answertwo[0]);
   $('#answertwo').html(answertwo[1]);
   $('#answerthree').html(answertwo[2]);
   $('#answerfour').html(answertwo[3]);
   $('#answerthree').addClass("correctanswer");
 }
+
+if(currentquestion == questionthree) { //Bambi
+  $('#answerone').html(answerthree[0]);
+  $('#answertwo').html(answerthree[1]);
+  $('#answerthree').html(answerthree[2]);
+  $('#answerfour').html(answerthree[3]);
+  $('#answertwo').addClass("correctanswer");
+}
+
+if(currentquestion == questionfour) { //
+  $('#answerone').html(answerfour[0]);
+  $('#answertwo').html(answerfour[1]);
+  $('#answerthree').html(answerfour[2]);
+  $('#answerfour').html(answerfour[3]);
+  $('#answerone').addClass("correctanswer");
+}
+
+if(currentquestion == questionfive) { //
+  $('#answerone').html(answerfive[0]);
+  $('#answertwo').html(answerfive[1]);
+  $('#answerthree').html(answerfive[2]);
+  $('#answerfour').html(answerfive[3]);
+  $('#answerfour').addClass("correctanswer");
+}
+
+
 
 // if(questiontwo) {
 //   $('.answertwo').html(answertwo);
