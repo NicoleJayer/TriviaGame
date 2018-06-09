@@ -22,7 +22,7 @@ var intervalId;
 //answer variables
 
 var answerone = ["Pocahontas", "Ariel", "Cinderella", "Mulan"];
-var answertwo = ["Let It Go", "Love is an open door", "For the first time in forever", "Frozen heart"];
+var answertwo = ["Love is an open door", "For the first time in forever","Let It Go", "Frozen heart"];
 var answerthree = ["Thumper", "Hopper", "Jumper", "Bumper"];
 var answerfour = ["P. Sherman, 42 Wallaby Way, Sydney", "P. Herman, 52 Wallaby Way, Sydney", " B. Sherman, 42 Wallaby Way, Sydney", "E. Herman, 42 Wallaby Way, Sydney"];
 var answerfive = ["A clock" , "A metronome" , "A pirate" , "A trumpet"];
@@ -82,11 +82,22 @@ $( ".start" ).on( "click", function() {
 
         })
 
+//if logic for displying the answers in association with the questions:
+
 if(currentquestion == questionone) {
-  $('.answerone').html(answerone[0]);
-  $('.answertwo').html(answerone[1]);
-  $('.answerthree').html(answerone[2]);
-  $('.answerfour').html(answerone[3]);
+  $('#answerone').html(answerone[0]);
+  $('#answertwo').html(answerone[1]);
+  $('#answerthree').html(answerone[2]);
+  $('#answerfour').html(answerone[3]);
+  $('#answerone').addClass("correctanswer");
+}
+
+else if(currentquestion == questiontwo) {
+  $('#answerone').html(answertwo[0]);
+  $('#answertwo').html(answertwo[1]);
+  $('#answerthree').html(answertwo[2]);
+  $('#answerfour').html(answertwo[3]);
+  $('#answerthree').addClass("correctanswer");
 }
 
 // if(questiontwo) {
