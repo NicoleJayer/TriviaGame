@@ -7,6 +7,7 @@ $( '.correctpage' ).hide();
 
 var correct = 0;
 var wrong = 0;
+var correctanswer = "";
 
 // document.getElementById('correctanswer').value=correctanswer;
 // $('.correctanswer').html(correctanswer);
@@ -27,7 +28,7 @@ var answerone = ["Pocahontas", "Ariel", "Cinderella", "Mulan"];
 var answertwo = ["Love is an open door", "For the first time in forever","Let It Go", "Frozen heart"];
 var answerthree = ["Hopper","Thumper", "Jumper", "Bumper"];
 var answerfour = ["P. Sherman, 42 Wallaby Way, Sydney", "P. Herman, 52 Wallaby Way, Sydney", " B. Sherman, 42 Wallaby Way, Sydney", "E. Herman, 42 Wallaby Way, Sydney"];
-var answerfive = ["A metronome" , "A clock" , "A pirate" , "A trumpet"];
+var answerfive = ["A metronome" , "A trumpet" , "A pirate" , "A clock"];
 
 //question variables
 
@@ -97,6 +98,7 @@ if(currentquestion == questionone) { //pocahontas
   $('#answertwo').addClass("wronganswer");
   $('#answerthree').addClass("wronganswer");
   $('#answerfour').addClass("wronganswer");
+  correctanswer = "Pocahontas";
 }
 
 if(currentquestion == questiontwo) { //frozen
@@ -108,6 +110,7 @@ if(currentquestion == questiontwo) { //frozen
   $('#answertwo').addClass("wronganswer");
   $('#answerone').addClass("wronganswer");
   $('#answerfour').addClass("wronganswer");
+  correctanswer = "Let It Go";
 }
 
 if(currentquestion == questionthree) { //Bambi
@@ -119,9 +122,10 @@ if(currentquestion == questionthree) { //Bambi
   $('#answerone').addClass("wronganswer");
   $('#answerthree').addClass("wronganswer");
   $('#answerfour').addClass("wronganswer");
+  correctanswer = "Thumper";
 }
 
-if(currentquestion == questionfour) { //
+if(currentquestion == questionfour) { // nemo
   $('#answerone').html(answerfour[0]);
   $('#answertwo').html(answerfour[1]);
   $('#answerthree').html(answerfour[2]);
@@ -130,9 +134,10 @@ if(currentquestion == questionfour) { //
   $('#answertwo').addClass("wronganswer");
   $('#answerthree').addClass("wronganswer");
   $('#answerfour').addClass("wronganswer");
+  correctanswer = "P. Sherman, 42 Wallaby Way, Sydney";
 }
 
-if(currentquestion == questionfive) { //
+if(currentquestion == questionfive) { // peter pan
   $('#answerone').html(answerfive[0]);
   $('#answertwo').html(answerfive[1]);
   $('#answerthree').html(answerfive[2]);
@@ -141,6 +146,7 @@ if(currentquestion == questionfive) { //
   $('#answertwo').addClass("wronganswer");
   $('#answerthree').addClass("wronganswer");
   $('#answerone').addClass("wronganswer");
+  correctanswer = "a clock";
 }
 
 //function for if clicked send to correct or incorrect page and add or detract points
@@ -153,7 +159,7 @@ $( ".correctanswer" ).on( "click", function() {
               console.log(correct);
               $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!");
               setTimeout(function(){
-                $( '.correctpage' ).hide();
+                $( '.incorrectpage' ).hide();
                   $( '.maincontainer' ).show();
               }, 10000); //tenseconds
 
