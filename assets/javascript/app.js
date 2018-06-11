@@ -73,6 +73,9 @@ function runtimer() {
       }
     }
 
+    function stop() {
+          clearInterval(intervalId);
+        }
 
 
 $( ".start" ).on( "click", function() {
@@ -81,7 +84,6 @@ $( ".start" ).on( "click", function() {
             runtimer();
             decrement();
             $('.question').html(currentquestion);
-
         })
 
 //if logic for displying the answers in association with the questions:
@@ -143,22 +145,39 @@ if(currentquestion == questionfive) { //
 
 //function for if clicked send to correct or incorrect page and add or detract points
 
-$( ".answerchoices" ).on( "click", function() {
+$( ".correctanswer" ).on( "click", function() {
             $( '.maincontainer' ).hide();
-
-            if(correctanswer) {
               $( '.correctpage' ).show();
+              stop();
               correct++;
+              console.log(correct);
               $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!");
-            }
+              setTimeout(function(){
+                $( '.correctpage' ).hide();
+                  $( '.maincontainer' ).show();
+              }, 10000); //tenseconds
 
-            else(wronganswer) {
+
+
+    })
+
+$( ".wronganswer" ).on( "click", function() {
+              $( '.maincontainer' ).hide();
               $( '.incorrectpage' ).show();
+              stop();
               wrong++;
+              console.log(wrong);
               $("#incorrectanswer").html("Nope, that's not right. The answer was actually " + correctanswer + "!");
-            }
+              setTimeout(function(){
+                $( '.incorrectpage' ).hide();
+                  $( '.maincontainer' ).show();
+              }, 10000); //tenseconds
+
 
         })
+
+
+
 
 
 // if(questiontwo) {
