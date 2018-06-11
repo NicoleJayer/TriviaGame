@@ -1,5 +1,7 @@
 //opening page hidden containers
 $( '.maincontainer' ).hide();
+$( '.incorrectpage' ).hide();
+$( '.correctpage' ).hide();
 
 // need variables for number of questions right and wrong
 
@@ -139,6 +141,24 @@ if(currentquestion == questionfive) { //
   $('#answerone').addClass("wronganswer");
 }
 
+//function for if clicked send to correct or incorrect page and add or detract points
+
+$( ".answerchoices" ).on( "click", function() {
+            $( '.maincontainer' ).hide();
+
+            if(correctanswer) {
+              $( '.correctpage' ).show();
+              correct++;
+              $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!");
+            }
+
+            else(wronganswer) {
+              $( '.incorrectpage' ).show();
+              wrong++;
+              $("#incorrectanswer").html("Nope, that's not right. The answer was actually " + correctanswer + "!");
+            }
+
+        })
 
 
 // if(questiontwo) {
