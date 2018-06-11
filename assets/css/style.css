@@ -29,3 +29,26 @@ p {
   display: block;
   clear: both;
 }
+
+.answerchoices {
+  width: 200px;
+  margin-left: 330px;
+  margin-top: 20px;
+  background-color: white;
+  height: 50px;
+  padding: 8px 0px 0px 0px;
+  margin-bottom: 20px;
+  border: 3px;
+  border-style: dashed;
+  text-align: center;
+  border-color: pink;
+
+}
+
+#maincontainer {
+  text-align: center;
+}
+
+.question {
+  font-size: 40px;
+}

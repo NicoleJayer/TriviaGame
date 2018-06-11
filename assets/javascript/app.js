@@ -90,6 +90,9 @@ if(currentquestion == questionone) { //pocahontas
   $('#answerthree').html(answerone[2]);
   $('#answerfour').html(answerone[3]);
   $('#answerone').addClass("correctanswer");
+  $('#answertwo').addClass("wronganswer");
+  $('#answerthree').addClass("wronganswer");
+  $('#answerfour').addClass("wronganswer");
 }
 
 if(currentquestion == questiontwo) { //frozen
@@ -98,6 +101,9 @@ if(currentquestion == questiontwo) { //frozen
   $('#answerthree').html(answertwo[2]);
   $('#answerfour').html(answertwo[3]);
   $('#answerthree').addClass("correctanswer");
+  $('#answertwo').addClass("wronganswer");
+  $('#answerone').addClass("wronganswer");
+  $('#answerfour').addClass("wronganswer");
 }
 
 if(currentquestion == questionthree) { //Bambi
@@ -106,6 +112,9 @@ if(currentquestion == questionthree) { //Bambi
   $('#answerthree').html(answerthree[2]);
   $('#answerfour').html(answerthree[3]);
   $('#answertwo').addClass("correctanswer");
+  $('#answerone').addClass("wronganswer");
+  $('#answerthree').addClass("wronganswer");
+  $('#answerfour').addClass("wronganswer");
 }
 
 if(currentquestion == questionfour) { //
@@ -114,6 +123,9 @@ if(currentquestion == questionfour) { //
   $('#answerthree').html(answerfour[2]);
   $('#answerfour').html(answerfour[3]);
   $('#answerone').addClass("correctanswer");
+  $('#answertwo').addClass("wronganswer");
+  $('#answerthree').addClass("wronganswer");
+  $('#answerfour').addClass("wronganswer");
 }
 
 if(currentquestion == questionfive) { //
@@ -122,6 +134,9 @@ if(currentquestion == questionfive) { //
   $('#answerthree').html(answerfive[2]);
   $('#answerfour').html(answerfive[3]);
   $('#answerfour').addClass("correctanswer");
+  $('#answertwo').addClass("wronganswer");
+  $('#answerthree').addClass("wronganswer");
+  $('#answerone').addClass("wronganswer");
 }
 
 
