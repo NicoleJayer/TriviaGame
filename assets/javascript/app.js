@@ -45,7 +45,8 @@ var questionfive = "What does the crocodile swallow in Peter Pan?"
 
 var question = [questionone, questiontwo, questionthree, questionfour, questionfive];
 
-var currentquestion = question[Math.floor(Math.random() * question.length)];
+var currentquestion;
+
 
 
 function runtimer() {
@@ -82,12 +83,18 @@ function runtimer() {
 $( ".start" ).on( "click", function() {
             $( '.startcontainer' ).hide();
             $( '.maincontainer' ).show();
+            currentquestion = question[Math.floor(Math.random() * question.length)];
+            clearInterval(intervalId);
             runtimer();
             decrement();
             $('.question').html(currentquestion);
+            console.log(question);
+            questionmatches();
         })
 
 //if logic for displying the answers in association with the questions:
+
+function questionmatches() {
 
 if(currentquestion == questionone) { //pocahontas
   $('#answerone').html(answerone[0]);
@@ -99,6 +106,7 @@ if(currentquestion == questionone) { //pocahontas
   $('#answerthree').addClass("wronganswer");
   $('#answerfour').addClass("wronganswer");
   correctanswer = "Pocahontas";
+  question.splice(0, 1);
 }
 
 if(currentquestion == questiontwo) { //frozen
@@ -150,18 +158,20 @@ if(currentquestion == questionfive) { // peter pan
 }
 
 //function for if clicked send to correct or incorrect page and add or detract points
-
 $( ".correctanswer" ).on( "click", function() {
             $( '.maincontainer' ).hide();
               $( '.correctpage' ).show();
               stop();
               correct++;
               console.log(correct);
-              $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!");
+              $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!")
+                  //
               setTimeout(function(){
+                funkyfunk();
+                $( '.correctpage' ).hide();
                 $( '.incorrectpage' ).hide();
                   $( '.maincontainer' ).show();
-              }, 10000); //tenseconds
+              }, 5000); //tenseconds
 
 
 
@@ -174,18 +184,29 @@ $( ".wronganswer" ).on( "click", function() {
               wrong++;
               console.log(wrong);
               $("#incorrectanswer").html("Nope, that's not right. The answer was actually " + correctanswer + "!");
+              //
               setTimeout(function(){
+                funkyfunk();
                 $( '.incorrectpage' ).hide();
+                $( '.correctpage' ).hide();
                   $( '.maincontainer' ).show();
-              }, 10000); //tenseconds
+              }, 5000); //tenseconds
 
 
         })
 
+    }
 
 
-
-
+function funkyfunk(){
+  currentquestion = question[Math.floor(Math.random() * question.length)];
+  clearInterval(intervalId);
+  runtimer();
+  decrement();
+  $('.question').html(currentquestion);
+  console.log(question);
+  questionmatches();
+}
 // if(questiontwo) {
 //   $('.answertwo').html(answertwo);
 // }
