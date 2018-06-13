@@ -22,7 +22,7 @@ var correctanswer = "";
 
 // counter number variable and function
 
-var counter = 60;
+var counter = 61;
 var intervalId;
 
 //variables for questions and their answers
@@ -57,7 +57,10 @@ function nextQuestion(){
  console.log(currentquestion);
   $('.question').html(question[currentquestion]);
   questionmatches();
+  counter = 61;
+  decrement();
 }
+
 
 
 
