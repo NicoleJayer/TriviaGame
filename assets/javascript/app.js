@@ -25,6 +25,12 @@ var correctanswer = "";
 var counter = 61;
 var intervalId;
 
+answeredOne = false;
+answeredTwo = false;
+answeredThree = false;
+answeredFour = false;
+answeredFive = false;
+answeredQ = 0;
 //variables for questions and their answers
 
 //answer variables
@@ -122,6 +128,8 @@ $( '#questionboxqone' ).show();
   $('#answerthreeqone').addClass("wronganswer");
   $('#answerfourqone').addClass("wronganswer");
   correctanswer = "Pocahontas";
+  answeredOne = true;
+
 }
 
 if(question[currentquestion] == questiontwo) { //frozen
@@ -136,6 +144,8 @@ if(question[currentquestion] == questiontwo) { //frozen
   $('#answeroneqtwo').addClass("wronganswer");
   $('#answerfourqtwo').addClass("wronganswer");
   correctanswer = "Let It Go";
+  answeredTwo = true;
+
 }
 
 if(question[currentquestion] == questionthree) { //Bambi
@@ -151,6 +161,8 @@ if(question[currentquestion] == questionthree) { //Bambi
   $('#answerthreeqthree').addClass("wronganswer");
   $('#answerfourqthree').addClass("wronganswer");
   correctanswer = "Thumper";
+  answeredThree = true;
+
 }
 
 if(question[currentquestion] == questionfour) { // nemo
@@ -167,6 +179,7 @@ if(question[currentquestion] == questionfour) { // nemo
   $('#answerthreeqfour').addClass("wronganswer");
   $('#answerfourqfour').addClass("wronganswer");
   correctanswer = "P. Sherman, 42 Wallaby Way, Sydney";
+  answeredFour = true;
 }
 
 if(question[currentquestion] == questionfive) { // peter pan
@@ -184,6 +197,7 @@ if(question[currentquestion] == questionfive) { // peter pan
   $('#answerthreeqfive').addClass("wronganswer");
   $('#answeroneqfive').addClass("wronganswer");
   correctanswer = "a clock";
+  answeredFive = true;
 }
 
 //function for if clicked send to correct or incorrect page and add or detract points
@@ -192,6 +206,7 @@ $( ".correctanswer" ).on( "click", function() {
               $( '.correctpage' ).show();
               stop();
               correct++;
+              answeredQ++;
               console.log(correct);
               $("#correctanswer").html("Hooray! The correct answer was indeed " + correctanswer + "!");
                   //
@@ -201,6 +216,7 @@ $( ".correctanswer" ).on( "click", function() {
                 $( '.correctpage' ).hide();
                 $( '.incorrectpage' ).hide();
                   $( '.maincontainer' ).show();
+                    endGame();
               }, 5000); //tenseconds
               runtimer();
               decrement();
@@ -213,6 +229,7 @@ $( ".wronganswer" ).on( "click", function() {
               $( '.incorrectpage' ).show();
               stop();
               wrong++;
+              answeredQ++;
               console.log(wrong);
               $("#incorrectanswer").html("Nope, that's not right. The answer was actually " + correctanswer + "!");
               //
@@ -222,8 +239,8 @@ $( ".wronganswer" ).on( "click", function() {
                 $( '.incorrectpage' ).hide();
                 $( '.correctpage' ).hide();
                   $( '.maincontainer' ).show();
+                    endGame();
               }, 5000); //tenseconds
-
               runtimer();
               decrement();
 
@@ -233,6 +250,13 @@ $( ".wronganswer" ).on( "click", function() {
     }
 
 
+function endGame(){
+  if (answeredQ == 5){
+    $( '.maincontainer' ).hide();
+    $( '.incorrectpage' ).hide();
+    $( '.correctpage' ).hide();
+  }
+}
 // function funkyfunk(){
 //   currentquestion = question[Math.floor(Math.random() * question.length)];
 //   question.splice(currentquestion, 1)
