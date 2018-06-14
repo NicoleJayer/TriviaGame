@@ -7,6 +7,7 @@ $( '#questionboxqfour' ).hide();
 $( '#questionboxqthree' ).hide();
 $( '#questionboxqtwo' ).hide();
 $( '#questionboxqone' ).hide();
+$( '.endpage' ).hide();
 
 // need variables for number of questions right and wrong
 
@@ -255,6 +256,9 @@ function endGame(){
     $( '.maincontainer' ).hide();
     $( '.incorrectpage' ).hide();
     $( '.correctpage' ).hide();
+    $( '.endpage' ).show();
+    $("#correctpoints").html("You got a total of " + correct + " correct!");
+    $("#incorrectpoints").html("You got a total of " + wrong + " wrong!");
   }
 }
 // function funkyfunk(){
