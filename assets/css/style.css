@@ -65,3 +65,15 @@ p {
 .question {
   font-size: 40px;
 }
+
+#resetText {
+  font-size: 20px;
+}
+
+.reset {
+  background-color: pink;
+  opacity: 1;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+}

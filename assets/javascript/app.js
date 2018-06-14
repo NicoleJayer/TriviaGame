@@ -57,6 +57,8 @@ var questionfive = "What does the crocodile swallow in Peter Pan?"
 
 var question = [questionone, questiontwo, questionthree, questionfour, questionfive];
 
+var gifArray = ['question1', 'question2', 'question3', 'question4', 'question5'];
+
 var currentquestion = 0;
 
 function nextQuestion(){
@@ -113,6 +115,28 @@ $( ".start" ).on( "click", function() {
             runtimer();
             decrement();
         })
+
+$( ".reset" ).on( "click", function() {
+                correct = 0;
+                wrong = 0;
+                correctanswer = "";
+                answeredQ = 0;
+                currentquestion = 0;
+                console.log(currentquestion);
+            $( '.startcontainer' ).show();
+            $( '.maincontainer' ).hide();
+            $( '.incorrectpage' ).hide();
+            $( '.correctpage' ).hide();
+            $( '#questionboxqfive' ).hide();
+            $( '#questionboxqfour' ).hide();
+            $( '#questionboxqthree' ).hide();
+            $( '#questionboxqtwo' ).hide();
+            $( '#questionboxqone' ).hide();
+            $( '.endpage' ).hide();
+                    // funkyfunk();
+
+                })
+
 
 //if logic for displying the answers in association with the questions:
 
@@ -205,6 +229,7 @@ if(question[currentquestion] == questionfive) { // peter pan
 $( ".correctanswer" ).on( "click", function() {
             $( '.maincontainer' ).hide();
               $( '.correctpage' ).show();
+              $('.gif').html('<img src = "../TriviaGame/assets/images/'+ gifArray[currentquestion] +'.gif" width = "400px">');
               stop();
               correct++;
               answeredQ++;
@@ -228,6 +253,7 @@ $( ".correctanswer" ).on( "click", function() {
 $( ".wronganswer" ).on( "click", function() {
               $( '.maincontainer' ).hide();
               $( '.incorrectpage' ).show();
+              $('.gif').html('<img src = "../TriviaGame/assets/images/'+ gifArray[currentquestion] +'.gif" width = "400px">');
               stop();
               wrong++;
               answeredQ++;
@@ -253,12 +279,17 @@ $( ".wronganswer" ).on( "click", function() {
 
 function endGame(){
   if (answeredQ == 5){
+    stop();
     $( '.maincontainer' ).hide();
     $( '.incorrectpage' ).hide();
     $( '.correctpage' ).hide();
     $( '.endpage' ).show();
     $("#correctpoints").html("You got a total of " + correct + " correct!");
     $("#incorrectpoints").html("You got a total of " + wrong + " wrong!");
+    currentquestion = 0;
+    correct = 0;
+    wrong = 0;
+    answeredQ = 0;
   }
 }
 // function funkyfunk(){
