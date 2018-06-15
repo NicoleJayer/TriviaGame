@@ -117,23 +117,25 @@ $( ".start" ).on( "click", function() {
         })
 
 $( ".reset" ).on( "click", function() {
-                correct = 0;
-                wrong = 0;
-                correctanswer = "";
-                answeredQ = 0;
-                currentquestion = 0;
-                console.log(currentquestion);
-            $( '.startcontainer' ).show();
-            $( '.maincontainer' ).hide();
-            $( '.incorrectpage' ).hide();
-            $( '.correctpage' ).hide();
-            $( '#questionboxqfive' ).hide();
-            $( '#questionboxqfour' ).hide();
-            $( '#questionboxqthree' ).hide();
-            $( '#questionboxqtwo' ).hide();
-            $( '#questionboxqone' ).hide();
-            $( '.endpage' ).hide();
-                    // funkyfunk();
+            //     correct = 0;
+            //     wrong = 0;
+            //     correctanswer = "";
+            //     answeredQ = 0;
+            //     currentquestion = 0;
+            //     console.log(currentquestion);
+            // $( '.startcontainer' ).show();
+            // $( '.maincontainer' ).hide();
+            // $( '.incorrectpage' ).hide();
+            // $( '.correctpage' ).hide();
+            // $( '#questionboxqfive' ).hide();
+            // $( '#questionboxqfour' ).hide();
+            // $( '#questionboxqthree' ).hide();
+            // $( '#questionboxqtwo' ).hide();
+            // $( '#questionboxqone' ).hide();
+            // $( '.endpage' ).hide();
+            //         // funkyfunk();
+
+             window.location.reload(true);
 
                 })
 
@@ -316,3 +318,29 @@ function endGame(){
 // if(questionfive) {
 //   $('.answerfive').html(answerfive);
 // }
+
+
+// $('#answertwoqone').empty();
+// $('#answeroneqone').empty();
+// $('#answerthreeqone').empty();
+// $('#answerfourqone').empty();
+//
+// $('#answertwoqtwo').empty();
+// $('#answeroneqtwo').empty();
+// $('#answerthreeqtwo').empty();
+// $('#answerfourqtwo').empty();
+//
+// $('#answertwoqthree').empty();
+// $('#answeroneqthree').empty();
+// $('#answerthreeqthree').empty();
+// $('#answerfourqthree').empty();
+//
+// $('#answertwoqfour').empty();
+// $('#answeroneqfour').empty();
+// $('#answerthreeqfour').empty();
+// $('#answerfourqfour').empty();
+//
+// $('#answertwoqfive').empty();
+// $('#answeroneqfive').empty();
+// $('#answerthreefive').empty();
+// $('#answerfourqfive').empty();
