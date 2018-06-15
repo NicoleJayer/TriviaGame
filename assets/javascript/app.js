@@ -123,7 +123,7 @@ $( ".reset" ).on( "click", function() {
             //     answeredQ = 0;
             //     currentquestion = 0;
             //     console.log(currentquestion);
-            // $( '.startcontainer' ).show();
+            // // $( '.startcontainer' ).show();
             // $( '.maincontainer' ).hide();
             // $( '.incorrectpage' ).hide();
             // $( '.correctpage' ).hide();
@@ -133,7 +133,7 @@ $( ".reset" ).on( "click", function() {
             // $( '#questionboxqtwo' ).hide();
             // $( '#questionboxqone' ).hide();
             // $( '.endpage' ).hide();
-            //         // funkyfunk();
+                    // funkyfunk();
 
              window.location.reload(true);
 
